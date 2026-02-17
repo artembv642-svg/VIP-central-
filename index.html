@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V.I.P. Central</title>
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+}
+header {
+    background: linear-gradient(45deg, #ff9900, #ff3300);
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+nav {
+    background:#222;
+    padding:10px;
+    text-align:center;
+}
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover { color:#ff9900; }
+.container { padding:20px; max-width:800px; margin:auto; }
+.menu-category { margin-bottom:40px; }
+.menu-category h2 { border-bottom:2px solid #ff9900; padding-bottom:10px; }
+.item {
+    display:flex;
+    justify-content:space-between;
+    background:#1c1c1c;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+}
+.item:hover { background:#333; }
+.price { color:#ff9900; font-weight:bold; }
+.rating { color:gold; }
+button {
+    padding:10px 20px;
+    background:#ff3300;
+    border:none;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
+}
+button:hover { background:#ff9900; }
+.payment-box {
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+input { padding:10px; width:100%; margin:10px 0; border-radius:5px; border:none; }
+</style>
+</head>
+<body>
+
+<header>🔥 V.I.P. CENTRAL 🔥</header>
+
+<nav>
+<a href="#menu">Menu</a>
+<a href="#payment">Payment</a>
+<a href="https://invite.viber.com/?g2=AQB7m29nMWALCVYYddJg3FoZX5bG1enQK5abTLas2SrXbMD9mevzLD%2BwWrkUk7p8" target="_blank">Viber</a>
+</nav>
+
+<div class="container" id="menu">
+
+<div class="menu-category">
+<h2>🥗 Salads & Snacks</h2>
+<div class="item"><div>Crab Salad <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">120 грн</div></div>
+<div class="item"><div>Liver Cake <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">150 грн</div></div>
+<div class="item"><div>Marinated Mushrooms <div class="rating">⭐⭐⭐⭐</div></div><div class="price">80 грн</div></div>
+<div class="item"><div>Small Pickled Cucumbers <div class="rating">⭐⭐⭐⭐</div></div><div class="price">50 грн</div></div>
+<div class="item"><div>Fresh Vegetable Salad <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">100 грн</div></div>
+<div class="item"><div>Cucumbers <div class="rating">⭐⭐⭐⭐</div></div><div class="price">40 грн</div></div>
+<div class="item"><div>Tomatoes <div class="rating">⭐⭐⭐⭐</div></div><div class="price">50 грн</div></div>
+<div class="item"><div>Brindza <div class="rating">⭐⭐⭐⭐</div></div><div class="price">60 грн</div></div>
+<div class="item"><div>Maslina (Olives) <div class="rating">⭐⭐⭐⭐</div></div><div class="price">60 грн</div></div>
+<div class="item"><div>Cheeses (3 kinds) <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">200 грн</div></div>
+</div>
+
+<div class="menu-category">
+<h2>🔥 Meat & Hot Dishes</h2>
+<div class="item"><div>Shashlik on Green Lavash <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">220 грн</div></div>
+<div class="item"><div>Salami (2 kinds) <div class="rating">⭐⭐⭐⭐</div></div><div class="price">120 грн</div></div>
+<div class="item"><div>Kabanosi <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">130 грн</div></div>
+<div class="item"><div>Hot Sandwich with Salami <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">90 грн</div></div>
+<div class="item"><div>Shashlik without meat (veg option) <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">220 грн</div></div>
+<div class="item"><div>Potatoes <div class="rating">⭐⭐⭐⭐</div></div><div class="price">60 грн</div></div>
+</div>
+
+<div class="menu-category">
+<h2>🥤 Drinks</h2>
+<div class="item"><div>Cola 0.5L <div class="rating">⭐⭐⭐⭐⭐</div></div><div class="price">40 грн</div></div>
+</div>
+
+</div>
+
+<div class="container" id="payment">
+<h2>💳 Payment</h2>
+<div class="payment-box">
+<label>Card Number</label>
+<input type="text" value="5169 1551 4385 0913" disabled>
+<label>Amount (UAH)</label>
+<input type="number" id="amount" placeholder="Enter amount">
+<button onclick="pay()">Pay</button>
+<p id="pay-message"></p>
+</div>
+</div>
+
+<script>
+function pay() {
+    const amount = document.getElementById('amount').value;
+    if(amount && amount>0) {
+        document.getElementById('pay-message').innerText = 
+        `✅ You "paid" ${amount} UAH to card 5169 1551 4385 0913 (demo, not real).`;
+    } else {
+        document.getElementById('pay-message').innerText = "❌ Enter a valid amount!";
+    }
+}
+</script>
+
+</body>
+</html>
